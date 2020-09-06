@@ -1,4 +1,4 @@
-# CMS (Content Management System ) Application using HTML5, CSS3, JavaScript, JQuery, PHP & MySQLi
+## CMS (Content Management System ) Application using HTML5, CSS3, JavaScript, JQuery, PHP & MySQLi
  
 Features
  - Dynamic Content
