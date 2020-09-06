@@ -1,5 +1,6 @@
 CMS (Content Management System ) Application using HTML5, CSS3, JavaScript, JQuery, PHP & MySQLi
-  -- Features
+ 
+ Features
     - Dynamic Content
     - Dynamic Images
     - Contact / Submit Form / Sending Email
