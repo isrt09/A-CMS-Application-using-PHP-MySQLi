@@ -48,8 +48,8 @@
 		$post_author 	= $_POST['author'];		
 		$post_keyword 	= $_POST['keyword'];
 		$post_date 		= date('d-m-y');		
-		// $post_image 	= $_FILES['image']['name'];		
-		// $image_tmp   	= $_FILES['image']['tmp_name'];				
+		$post_image 	= $_FILES['image']['name'];		
+		$image_tmp   	= $_FILES['image']['tmp_name'];				
 
 		move_uploaded_file($image_tmp, "../images/$post_image");
 
