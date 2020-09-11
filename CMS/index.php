@@ -41,10 +41,34 @@
 
 		<!-- Main Content Start -->
 		<div class="content">
-			This is Content
+			<?php 
+				$query  = "SELECT * FROM posts ORDER BY rand() LIMIT 0, 5";
+				$result = mysqli_query($con, $query);
+				while($row = mysqli_fetch_assoc($result)){
+					$title   = $row['post_title'];
+					$author  = $row['post_author'];
+					$keyword = $row['post_keywords'];										
+					$date    = $row['post_date'];										
+					$photo   = $row['post_image'];										
+					$content = $row['post_content'];
+					echo "
+					<p>$title</p>
+					<p>$author</p>
+					<p>$keyword</p>
+					<p>$date</p>					
+					<img src='admin/news_images/$photo' width='100' height='100'>
+					<p>$content</p>
+
+
+
+
+
+					";										
+				}
+			?>				
 		</div>
 		<!-- Main Content End -->
-
+		
 		<!-- SideBar Start -->
 		<div class="sidebar">
 			<ul id="categories">
