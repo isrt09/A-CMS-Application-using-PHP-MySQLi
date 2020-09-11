@@ -30,6 +30,12 @@
 					}
 				 ?>		
 			</ul>
+			<div>
+				<form action="result.php" method="get" enctype="multipart/form-data" id="form">
+					<input type="text" name="search_query">
+					<input type="submit" name="search" value="Search">
+				</form>
+			</div>
 		</div>
 		<!-- Navigation End -->
 

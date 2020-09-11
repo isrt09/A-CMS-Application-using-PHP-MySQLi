@@ -63,6 +63,8 @@ body{
 #menu li a{text-decoration: none; font-size: 16px; font-family: 'Comic Sans MS'; color: #FFF; margin:5px; padding: 5px;}
 #menu li a:hover{text-decoration: underline; background: #F99;}
 
+#form{float: right; line-height: 50px; padding-right: 10px;}
+
 #categories{line-height: 50px; }
 #categories li{list-style: none; display: block; text-align: center;}
 #categories li a{text-decoration: none; font-size: 16px; font-family: 'Comic Sans MS'; color: #FFF; margin:5px; padding: 5px;}
