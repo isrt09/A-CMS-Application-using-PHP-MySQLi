@@ -58,6 +58,11 @@ body{
 	float: left;
 }
 
+#menu{line-height: 50px; float: left;}
+#menu li{list-style: none; display: inline;}
+#menu li a{text-decoration: none; font-size: 16px; font-family: 'Comic Sans MS'; color: #FFF; margin:5px; padding: 5px;}
+#menu li a:hover{text-decoration: underline; background: #F99;}
+
 .sidebar{
 	width: 250px;
 	height: 1000px;
