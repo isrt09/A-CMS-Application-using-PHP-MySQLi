@@ -19,11 +19,16 @@
 		<!-- Navigation Start -->		
 		<div class="navbar">
 			<ul id="menu">
-				<li><a href="">HOME</a></li>
-				<li><a href="">SPORTS</a></li>
-				<li><a href="">POLITICS</a></li>
-				<li><a href="">HEALTH</a></li>
-				<li><a href="">INTERNATIONAL</a></li>
+				<?php
+					include 'includes/database.php';
+					$query     = "SELECT * FROM categories";
+					$result    = mysqli_query($con,$query);
+					while($row = mysqli_fetch_assoc($result)){
+						$category_id    = $row['category_id'];
+						$category_title = $row['category_title'];
+						echo "<li><a href='index.php?id=$category_id'>$category_title</a></li>";
+					}
+				 ?>		
 			</ul>
 		</div>
 		<!-- Navigation End -->
@@ -36,7 +41,18 @@
 
 		<!-- SideBar Start -->
 		<div class="sidebar">
-			This is SideBar
+			<ul id="categories">
+				<?php
+					include 'includes/database.php';
+					$query     = "SELECT * FROM categories";
+					$result    = mysqli_query($con,$query);
+					while($row = mysqli_fetch_assoc($result)){
+						$category_id    = $row['category_id'];
+						$category_title = $row['category_title'];
+						echo "<li><a href='index.php?id=$category_id'>$category_title</a></li>";
+					}
+				 ?>											
+			</ul>
 		</div>
 		<!-- SideBar End -->
 
