@@ -10,7 +10,7 @@
 		$photo   = $row['post_image'];										
 		$content = substr($row['post_content'], 0,300);
 		echo "
-		<h2 id='head'>$title</h2><br/>
+		<h2 id='head'><a href='details.php?id=$post_id'>$title</a></h2><br/>
 		<span><b>Author : </b><i>$author</i></span>,&nbsp;<span><b>Keywords : </b>$keyword</span>,&nbsp;<span><b>Published dated by : </b>$date</span>								
 		<img src='admin/news_images/$photo' width='100' height='100'>
 		<div>$content <a href='details.php?id=$post_id' style='float: right;' id='rmlink'>READ MORE</a></div><br/>
