@@ -70,7 +70,7 @@
 		$post_image_tmp	= $_FILES['post_image']['tmp_name'];
 		$post_content	= $_POST['post_content'];
 
-		move_uploaded_file($post_image_tmp, 'news_images/$post_image');
+		move_uploaded_file($post_image_tmp, 'news_images/'.$post_image);
 		if($post_title == "" OR $post_content=="" OR $post_keywords=="" OR $post_author=='' OR $post_category==""){
 			echo "<script>alert('Please Fill Up the Fields')</script>";
 			exit();

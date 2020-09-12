@@ -19,16 +19,7 @@
 		<!-- Navigation Start -->		
 		<div class="navbar">
 			<ul id="menu">
-				<?php
-					include 'includes/database.php';
-					$query     = "SELECT * FROM categories";
-					$result    = mysqli_query($con,$query);
-					while($row = mysqli_fetch_assoc($result)){
-						$category_id    = $row['category_id'];
-						$category_title = $row['category_title'];
-						echo "<li><a href='index.php?id=$category_id'>$category_title</a></li>";
-					}
-				 ?>		
+				<?php include_once 'includes/navbar.php'; ?>
 			</ul>
 			<div>
 				<form action="result.php" method="get" enctype="multipart/form-data" id="form">
@@ -41,7 +32,8 @@
 
 		<!-- Main Content Start -->
 		<div class="content">
-			<?php include_once 'includes/details.php'; ?>
+			<?php include_once 'includes/post_content.php'; ?>			
+			<?php include_once 'includes/category_content.php'; ?>			
 		</div>
 		<!-- Main Content End -->		
 		<!-- SideBar Start -->

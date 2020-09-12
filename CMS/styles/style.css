@@ -51,8 +51,7 @@ body{
 }
 
 .content{
-	width: 750px;
-	height: 1000px;
+	width: 750px;	
 	background: #FFF;
 	float: left;
 	padding: 5px;
@@ -80,8 +79,7 @@ body{
 #categories li a:hover{text-decoration: underline; background: #000;}
 
 .sidebar{
-	width: 240px;
-	height: 1010px;
+	width: 240px;	
 	background:#F99; 
 	float:right;
 }
