@@ -76,7 +76,7 @@
 
 		<!-- Footer Start -->
 		<div class="footer">
-			This is Footer
+			<h1 style="text-align: center; padding: 40px;">All Rights Reserved &copy 2020 || www.mazedur.com</h1>
 		</div>
 		<!-- Footer End -->
 	</div>

@@ -1,6 +1,6 @@
 <?php
 	include 'includes/database.php';
-	$query     = "SELECT * FROM posts";
+	$query     = "SELECT * FROM posts ORDER BY rand() limit 0,4";
 	$result    = mysqli_query($con,$query);
 	while($row = mysqli_fetch_assoc($result)){
 		$post_id    = $row['post_id'];
