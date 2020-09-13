@@ -30,8 +30,8 @@
 					}
 				 ?>		
 			</ul>
-			<div>
-				<form action="result.php" method="get" enctype="multipart/form-data" id="form">
+			<div>				
+				<form action="results.php" method="get" enctype="multipart/form-data" id="form">
 					<input type="text" name="search_query">
 					<input type="submit" name="search" value="Search">
 				</form>
@@ -63,27 +63,7 @@
 					}
 				} 				
 			?>		
-			<form action="details.php?id=<?php echo $post_id; ?>" method="post">
-				<h2 align="center">Post a Comment</h2>
-				<table border="2px solid#000" bgcolor="#96CCCC" align="center" width="700">
-					<tr>
-						<td>Name :</td>
-						<td><input type="text" name="comment_name"></td>
-					</tr>
-					<tr>
-						<td>Email :</td>
-						<td><input type="text" name="comment_email"></td>
-					</tr>
-					<tr>
-						<td>Comment :</td>
-						<td><textarea name="comment_content" id="" cols="30" rows="10"></textarea></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><input type="submit" name="post_name" value="Comment"></td>
-					</tr>
-				</table>
-			</form>	
+			<?php include 'includes/comment_form.php'; ?>
 		</div>
 
 		<!-- Main Content End -->		
