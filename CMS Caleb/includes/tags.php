@@ -1,18 +1,15 @@
-<div class="sidebar-box">
-  <h3 class="heading">Tags</h3>
-  <ul class="tags">
-    <li><a href="#">Travel</a></li>
-    <li><a href="#">Adventure</a></li>
-    <li><a href="#">Food</a></li>
-    <li><a href="#">Lifestyle</a></li>
-    <li><a href="#">Business</a></li>
-    <li><a href="#">Freelancing</a></li>
-    <li><a href="#">Travel</a></li>
-    <li><a href="#">Adventure</a></li>
-    <li><a href="#">Food</a></li>
-    <li><a href="#">Lifestyle</a></li>
-    <li><a href="#">Business</a></li>
-    <li><a href="#">Freelancing</a></li>
-  </ul>
+    <div class="sidebar-box">
+      <h3 class="heading">Tags</h3>
+       <?php 
+          $sql    = "SELECT * FROM tbl_post";
+          $result = mysqli_query($connection, $sql);
+          while($row = mysqli_fetch_assoc($result)){
+            $post_tags = $row['post_tags']; 
+        ?>
+          <ul class="tags">   
+            <li><a href="#"><?php echo $post_tags; ?></a></li>        
+          </ul>    
+      <?php }
+      ?>
 </div>
 <!-- END sidebar -->

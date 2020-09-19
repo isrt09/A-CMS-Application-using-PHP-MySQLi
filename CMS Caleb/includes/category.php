@@ -1,11 +1,16 @@
 <div class="sidebar-box">
 	<h3 class="heading">Categories</h3>
 	<ul class="categories">
-	  <li><a href="#">Food <span>(12)</span></a></li>
-	  <li><a href="#">Travel <span>(22)</span></a></li>
-	  <li><a href="#">Lifestyle <span>(37)</span></a></li>
-	  <li><a href="#">Business <span>(42)</span></a></li>
-	  <li><a href="#">Adventure <span>(14)</span></a></li>
+	  <?php
+	  	 global $connection; 
+	  	 $sql    = "SELECT * FROM tbl_category";
+	  	 $result = mysqli_query($connection, $sql);
+	  	 while($row = mysqli_fetch_array($result)){
+	  	 	$category_name = $row['category_name'];?>
+	     <li><a href="#"><?php echo $category_name; ?> <span>(12)</span></a></li>
+	  	 <?php
+	      }
+	    ?>	  
 	</ul>
 </div>
 <!-- END sidebar-box -->
