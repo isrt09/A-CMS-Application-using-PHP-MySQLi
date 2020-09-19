@@ -16,5 +16,10 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet"  />
     <script src="js/all.min.js" ></script>
+    <script>
+        function confirmDelete(){
+            return confirm("Are you sure Delete Data?!");
+        }
+    </script>
 </head>
 <!-- HEADER ENDS -->

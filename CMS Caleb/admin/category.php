@@ -15,7 +15,7 @@
                        <li class="breadcrumb-item active">Category</li>
                     </ol>
                     <div class="container">                        
-                        <div class="row">
+                        <div class="row">                            
                             <h3 class="py-3" align="center">ADD CATEGORY</h3>
                             <div class="col-md-12">
                                 <form action="includes/functions.php" method="post">

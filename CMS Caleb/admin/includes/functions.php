@@ -1,7 +1,8 @@
 <?php include('db.php'); ?>
 
 <?php
-	// Add Category 	
+	// ========================== Category Module ==========================
+	// ADD Category	
 	function add_category(){
 		global $connection;
 		if(isset($_POST['save_category'])){
@@ -16,6 +17,42 @@
 				}else{
 					header('location: ../category.php?category_added_smile');
 				}
+			}
+		}
+	}
+	// Show Category	
+	function show_category(){
+		global $connection;
+		$sql = "SELECT * FROM tbl_category";
+		$result = mysqli_query($connection,$sql);
+		while($row = mysqli_fetch_array($result)){
+			$category_id   = $row['category_id'];
+			$category_name = $row['category_name'];
+			echo 
+			"	
+				<tr>
+					<td>$category_id</td>
+					<td>$category_name</td>					
+					<td>
+					    <a href='category.php?id=$category_id' class='btn btn-sm btn-success'>EDIT</a>
+					    <a onclick='confirmDelete();' href='category.php?delete=$category_id' class='btn btn-sm btn-danger'>DELETE</a>
+					</td>					
+				</tr>
+			";
+			
+		}
+	}
+	// Delete Category
+	function delete_category(){		
+		global $connection;
+		if(isset($_GET['delete'])){
+			$category_id = $_GET['delete'];
+			$sql = "DELETE FROM tbl_category WHERE category_id = $category_id";
+			$result = mysqli_query($connection,$sql);
+			if(!$result){
+				die("Could not delete data".mysql_error($connection));
+			}else{
+				header('location:category.php');
 			}
 		}
 	}
@@ -47,28 +84,9 @@
 			}
 		}
 	}
-	// Show Category	
-	function show_category(){
-		global $connection;
-		$sql = "SELECT * FROM tbl_category";
-		$result = mysqli_query($connection,$sql);
-		while($row = mysqli_fetch_array($result)){
-			$category_id   = $row['category_id'];
-			$category_name = $row['category_name'];
-			echo 
-			"	
-				<tr>
-					<td>$category_id</td>
-					<td>$category_name</td>					
-					<td>
-					    <a href='category.php?id=$category_id' class='btn btn-sm btn-success'>EDIT</a>
-					    <a href='category.php?id=$category_id' class='btn btn-sm btn-danger'>DELETE</a>
-					</td>					
-				</tr>
-			";
-			
-		}
-	}
+	
+
+	// ========================== Post Module ==========================
 	// Show Posts
 	function show_post(){
 		global $connection;
@@ -79,7 +97,7 @@
 			$post_title 	= $row['post_title'];
 			$post_category 	= $row['post_category'];
 			$post_category_id= $row['category_id'];
-			$post_content   = $row['post_content'];
+			$post_content   = mysqli_real_escape_string($connection,$row['post_content']);
 			$post_tags      = $row['post_tags'];
 			$post_status    = $row['post_status'];
 			$post_date      = $row['post_date'];
@@ -109,7 +127,11 @@
 			";
 		}
 	}
+
+	// CallBack Function Lists  ................
 	add_category();
+	delete_category();	
 	add_post();
+
  ?>		
 
